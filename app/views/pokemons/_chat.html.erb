@@ -1,0 +1,22 @@
+<div class="chat-container flip-side flip-side_back" data-controller="message" data-message-sentences-value="<%= pokemon.sentences %>" data-profile-target="chat">
+  <div class="decoration-buttons">
+    <div class="decoration-button decoration-button-red"></div>
+    <div class="decoration-button decoration-button-green"></div>
+    <div class="decoration-button decoration-button-blue"></div>
+  </div>
+  <div class="chat-info">
+    <%= cl_image_tag pokemon.photo.key, :class => "avatar-custom-2", transformation: [
+              {height: 1024, width: 1024, crop: :crop, x: 0, y:0}] %>
+    <h3><%= pokemon.name.capitalize %></h3>
+  </div>
+  <div class="chat" >
+    <div class="messages" data-message-target="messages">
+    </div>
+    <div class="send">
+      <form  data-action="submit->message#send" autocomplete="off">
+        <input data-message-target="input" type="text" name="message" placeholder="Type your message..." />
+        <button type="submit"><i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i></button>
+      </form>
+    </div>
+  </div>
+</div>

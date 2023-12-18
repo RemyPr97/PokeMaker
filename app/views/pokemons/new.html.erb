@@ -1,0 +1,15 @@
+<div class="lab-container" data-controller="pokemon">
+  <div class="container-shen" data-pokemon-target="chen">
+    <%= simple_form_for @pokemon, html: { class: "step-form-container", data: { "pokemon-target": "form", action: "submit->pokemon#step" } } do |f| %>
+        <div data-pokemon-target="step" class="step-form-container">
+          <%= render "pokemons/form", f: f %>
+        </div>
+      <% end %>
+  </div>
+    <div id="powerrangers" class="d-none">
+      <a href='/pokemons' class='text-decoration-none mt-2 mx-2 btn-position1'><button class='btn-pixel'>Pokedex</button></a>
+      <a href='/profile' class='text-decoration-none mt-2 mx-2 btn-position2'><button class='btn-pixel'>Profile</button></a>
+    </div>
+  <div data-pokemon-target="gif" class="gif-loading d-none">
+  </div>
+</div>
